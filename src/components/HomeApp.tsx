@@ -16,10 +16,14 @@ export default function HomeApp() {
   return (
     <div>
       <div className="mx-auto mb-10 max-w-2xl text-center">
-        <h1 className="text-3xl font-bold text-slate-900">ISTQB CTFL v4.0 Practice</h1>
+        <h1 className="text-3xl font-bold text-slate-900">
+          ISTQB® Certified Tester <span className="text-indigo-700">Foundation Level</span> Practice
+        </h1>
         <p className="mt-2 text-slate-500">
-          Four official sample exams plus a bonus set. Take a timed simulation under real exam
-          conditions, or practice question by question with full explanations.
+          Preparation for the CTFL v4.0 certification — the ISTQB entry-level exam (not Advanced,
+          Expert, or specialist tracks). Four official sample exams plus a bonus set: take a timed
+          simulation under real exam conditions, or practice question by question with full
+          explanations.
         </p>
       </div>
 

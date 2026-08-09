@@ -12,6 +12,6 @@ const exam = getExam(id!);
 if (!exam) throw new Error(`Unknown exam id: ${id}`);
 ---
 
-<Layout title={`${exam.label} · ISTQB Practice`}>
+<Layout title={`${exam.label} · ISTQB CTFL Practice`}>
   <ExamApp client:load exam={exam} />
 </Layout>

@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   site: 'https://joanesquivel.github.io',
-  base: '/istqb',
+  base: '/istqb-ctfl',
   integrations: [react()],
   vite: { plugins: [tailwindcss()] },
 });

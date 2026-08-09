@@ -1,8 +1,8 @@
-# ISTQB CTFL v4.0 Practice Platform
+# ISTQB Foundation Level (CTFL) v4.0 Practice Platform
 
-**Live app: <https://joanesquivel.github.io/istqb/>**
+**Live app: <https://joanesquivel.github.io/istqb-ctfl/>**
 
-A static web app to prepare for the ISTQB® Certified Tester Foundation Level (CTFL) v4.0 exam using the four official sample exams (A–D) plus a bonus set of 26 extra questions from Exam A's appendix.
+A static web app to prepare for the **ISTQB® Certified Tester Foundation Level (CTFL) v4.0** exam — the entry-level ISTQB certification (this project does not cover the Advanced, Expert, or specialist tracks). It uses the four official sample exams (A–D) plus a bonus set of 26 extra questions from Exam A's appendix.
 
 | Exam mode | Practice mode |
 |---|---|
@@ -24,7 +24,7 @@ A static web app to prepare for the ISTQB® Certified Tester Foundation Level (C
 
 ```bash
 npm install
-npm run dev        # http://localhost:4321/istqb/
+npm run dev        # http://localhost:4321/istqb-ctfl/
 ```
 
 | Command | Purpose |
@@ -57,7 +57,7 @@ The JSONs in `converted_assets/` are the app's source of truth and are **generat
 
 ## Deployment
 
-Pushing to `main` triggers `.github/workflows/deploy.yml`: data validation → Astro build → GitHub Pages. The site is served from `/istqb/` (configured via `site`/`base` in `astro.config.mjs`).
+Pushing to `main` triggers `.github/workflows/deploy.yml`: data validation → Astro build → GitHub Pages. The site is served from `/istqb-ctfl/` (configured via `site`/`base` in `astro.config.mjs`).
 
 ## Attribution
 
