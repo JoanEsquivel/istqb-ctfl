@@ -25,6 +25,17 @@ export default function HomeApp() {
           simulation under real exam conditions, or practice question by question with full
           explanations.
         </p>
+        <p className="mt-2 text-sm text-slate-500">
+          Where to take the real exam and official details:{' '}
+          <a
+            href="https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-indigo-600 hover:underline"
+          >
+            official CTFL v4.0 page at istqb.org
+          </a>
+        </p>
       </div>
 
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

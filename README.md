@@ -4,6 +4,8 @@
 
 A static web app to prepare for the **ISTQB® Certified Tester Foundation Level (CTFL) v4.0** exam — the entry-level ISTQB certification (this project does not cover the Advanced, Expert, or specialist tracks). It uses the four official sample exams (A–D) plus a bonus set of 26 extra questions from Exam A's appendix.
 
+Looking to take the real exam or read the official syllabus? See the [official CTFL v4.0 page at istqb.org](https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/).
+
 | Exam mode | Practice mode |
 |---|---|
 | ![Timed exam with question navigator](docs/images/exam-mode.png) | ![Practice feedback with per-option explanations](docs/images/practice-mode.png) |
