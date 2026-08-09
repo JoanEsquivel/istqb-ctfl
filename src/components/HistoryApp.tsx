@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import type { Attempt } from '../lib/types';
 import { EXAM_SETS } from '../lib/exams';
 import { loadAttempts } from '../lib/storage';
+import { url } from '../lib/url';
 import { Badge } from './ui/Badge';
 import { Card } from './ui/Card';
 
@@ -30,7 +31,7 @@ export default function HistoryApp() {
       {loaded && attempts.length === 0 && (
         <Card className="p-10 text-center">
           <p className="text-slate-500">No attempts yet.</p>
-          <a href="/" className="mt-2 inline-block text-sm font-medium text-indigo-600 hover:underline">
+          <a href={url('/')} className="mt-2 inline-block text-sm font-medium text-indigo-600 hover:underline">
             Pick an exam to get started →
           </a>
         </Card>
@@ -38,7 +39,7 @@ export default function HistoryApp() {
 
       <div className="flex flex-col gap-3">
         {attempts.map((attempt) => (
-          <a key={attempt.id} href={`/review/?attempt=${attempt.id}`} className="group">
+          <a key={attempt.id} href={url(`/review/?attempt=${attempt.id}`)} className="group">
             <Card className="flex flex-wrap items-center gap-x-4 gap-y-2 p-4 transition-all group-hover:border-indigo-400 group-hover:shadow-md">
               <div className="min-w-40">
                 <p className="font-semibold text-slate-900 group-hover:text-indigo-700">

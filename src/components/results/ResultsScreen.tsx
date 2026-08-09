@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 import type { ExamSet, QuizMode, SubmitReason } from '../../lib/types';
 import { chapterLabel } from '../../lib/chapters';
 import { gradeAttempt } from '../../lib/grading';
+import { url } from '../../lib/url';
 import { Button } from '../ui/Button';
 import { Card } from '../ui/Card';
 import { ProgressRing } from '../ui/ProgressRing';
@@ -85,7 +86,7 @@ export function ResultsScreen({ exam, answers, flagged, mode, submitReason, onRe
                   Back to exam start
                 </Button>
                 <a
-                  href="/"
+                  href={url('/')}
                   className="inline-flex items-center rounded-lg px-4 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-100"
                 >
                   All exams

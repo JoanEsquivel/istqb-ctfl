@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import type { Attempt } from '../lib/types';
 import { EXAM_SETS } from '../lib/exams';
 import { loadAttempts } from '../lib/storage';
+import { url } from '../lib/url';
 import { Badge } from './ui/Badge';
 import { Card } from './ui/Card';
 
@@ -28,7 +29,7 @@ export default function HomeApp() {
           const best = setAttempts.length ? Math.max(...setAttempts.map((a) => a.score)) : null;
           const last = setAttempts[0] ?? null;
           return (
-            <a key={set.id} href={`/exam/${set.id}/`} className="group">
+            <a key={set.id} href={url(`/exam/${set.id}/`)} className="group">
               <Card className="flex h-full flex-col p-6 transition-all group-hover:border-indigo-400 group-hover:shadow-md">
                 <div className="flex items-start justify-between gap-2">
                   <h2 className="text-lg font-semibold text-slate-900 group-hover:text-indigo-700">

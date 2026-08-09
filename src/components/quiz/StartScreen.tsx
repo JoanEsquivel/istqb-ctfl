@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import type { Attempt, ExamSet, QuizMode, QuizState } from '../../lib/types';
 import { examDuration } from '../../lib/config';
 import { attemptsForExam, loadSettings, saveSettings } from '../../lib/storage';
+import { url } from '../../lib/url';
 import { Badge } from '../ui/Badge';
 import { Button } from '../ui/Button';
 import { Card } from '../ui/Card';
@@ -130,7 +131,7 @@ export function StartScreen({ exam, resume, onResume, onDiscard, onStart }: Prop
             <strong className="text-slate-700">
               {best}/{exam.totalPoints}
             </strong>{' '}
-            · <a href="/history/" className="text-indigo-600 hover:underline">View history</a>
+            · <a href={url('/history/')} className="text-indigo-600 hover:underline">View history</a>
           </p>
         )}
       </Card>

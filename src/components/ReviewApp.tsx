@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import type { Attempt } from '../lib/types';
 import { EXAM_SETS } from '../lib/exams';
 import { getAttempt } from '../lib/storage';
+import { url } from '../lib/url';
 import { Card } from './ui/Card';
 import { ResultsScreen } from './results/ResultsScreen';
 
@@ -23,7 +24,7 @@ export default function ReviewApp() {
     return (
       <Card className="mx-auto max-w-md p-10 text-center">
         <p className="text-slate-500">Attempt not found.</p>
-        <a href="/history/" className="mt-2 inline-block text-sm font-medium text-indigo-600 hover:underline">
+        <a href={url('/history/')} className="mt-2 inline-block text-sm font-medium text-indigo-600 hover:underline">
           Back to history →
         </a>
       </Card>
@@ -33,7 +34,7 @@ export default function ReviewApp() {
   return (
     <div>
       <p className="mb-4 text-sm text-slate-500">
-        <a href="/history/" className="font-medium text-indigo-600 hover:underline">
+        <a href={url('/history/')} className="font-medium text-indigo-600 hover:underline">
           ← History
         </a>{' '}
         · Attempt from {new Date(attempt.submittedAt).toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' })}
