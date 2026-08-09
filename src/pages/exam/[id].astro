@@ -1,0 +1,17 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ExamApp from '../../components/quiz/ExamApp';
+import { EXAM_SETS, getExam } from '../../lib/exams';
+
+export function getStaticPaths() {
+  return EXAM_SETS.map((set) => ({ params: { id: set.id } }));
+}
+
+const { id } = Astro.params;
+const exam = getExam(id!);
+if (!exam) throw new Error(`Unknown exam id: ${id}`);
+---
+
+<Layout title={`${exam.label} · ISTQB Practice`}>
+  <ExamApp client:load exam={exam} />
+</Layout>

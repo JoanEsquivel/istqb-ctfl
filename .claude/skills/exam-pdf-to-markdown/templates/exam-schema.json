@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ISTQB Exam",
+  "type": "object",
+  "required": ["exam", "source", "totalQuestions", "totalPoints", "passingScore", "questions"],
+  "properties": {
+    "exam": { "type": "string", "description": "Exam letter, e.g. A" },
+    "source": { "type": "string", "description": "e.g. ISTQB CTFL v4.0 Sample Exam A v1.7" },
+    "totalQuestions": { "type": "integer", "description": "Count of main-section questions (scoreable exam)" },
+    "totalPoints": { "type": "integer" },
+    "passingScore": { "type": "integer", "description": "65% of totalPoints, rounded up (ISTQB rule)" },
+    "questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "number", "section", "points", "learningObjective", "kLevel", "selectCount", "question", "options"],
+        "properties": {
+          "id": { "type": "string", "description": "\"1\"..\"40\" for main, \"A1\".. for additional" },
+          "number": { "type": "integer", "description": "Numeric part of id" },
+          "section": { "enum": ["main", "additional"] },
+          "points": { "type": "integer" },
+          "learningObjective": { "type": "string", "pattern": "^FL-\\d+\\.\\d+\\.\\d+$" },
+          "kLevel": { "enum": ["K1", "K2", "K3"] },
+          "selectCount": { "type": "integer", "description": "1 for Select ONE, 2 for Select TWO" },
+          "question": { "type": "string", "description": "Full stem, including any i./ii./iii. lists, newline-separated" },
+          "rationale": { "type": "string", "description": "Optional shared rationale (e.g. analysis of i./ii./iii. items) that applies to the whole question" },
+          "hasFigure": { "type": "boolean", "description": "True when the stem references a diagram/figure from the PDF" },
+          "image": { "type": "string", "description": "Relative path to the rendered PDF page image for figure questions, e.g. images/exam-A-q23.png" },
+          "options": {
+            "type": "array",
+            "minItems": 4,
+            "items": {
+              "type": "object",
+              "required": ["letter", "text", "isCorrect", "explanation"],
+              "properties": {
+                "letter": { "type": "string", "pattern": "^[a-e]$" },
+                "text": { "type": "string" },
+                "isCorrect": { "type": "boolean" },
+                "explanation": { "type": "string", "description": "Rationale from the Answers PDF for this option" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
